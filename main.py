@@ -27,10 +27,8 @@ def get_readme(owner, repo):
         return decoded.splitlines()
     return []
 
-def save_to_csv(text, filename="repos"): 
-    with open(f"{filename}_{KEYWORDS[0]}.csv", "a", encoding="utf-8") as file:
-        if not os.path.exists(f"{filename}_{KEYWORDS[0]}.csv"):
-            file.write("Repository,Keyword\n")
+def save_to_csv(text, filename="repos.csv"):
+    with open(filename, "a", encoding="utf-8") as file:
         file.write(text + "\n")
 
 def extract_keywords_from_line(line, keywords):
